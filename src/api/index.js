@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = "https://todo-server-fhave.vercel.app/todos";
+const url = "https://todo-server-fhave.vercel.app//todos";
 
 export const readTodos = () => axios.get(url);
 export const createTodo = newTodo => axios.post(url, newTodo);

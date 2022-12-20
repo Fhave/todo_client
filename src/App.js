@@ -1,7 +1,6 @@
 import { React, useEffect, useState } from "react";
-import { deleteTodo } from "./api";
 import Preloader from "./components/Preloader";
-import { createTodo, readTodos, updateTodo } from "./functions";
+import { createTodo, readTodos, updateTodo, deleteTodo } from "./functions";
 
 
 function App() {
@@ -86,10 +85,9 @@ function App() {
         {
           !todos ? <Preloader /> : todos.length > 0 ? <ul className="collection"> 
             {todos.map(todo => (
-              <li key={todo._id}
-                onClick={() => setCurrentId(todo._id)}
-                className="collection-item"><div><h5>{todo.title}</h5>
-                  <p>{todo.content}<a href="#!" onClick={() => removeTodo(todos._id)} className="secondary-content"><i className="material-icons">delete</i></a></p></div></li>
+              <li key={todo._id}                
+                className="collection-item"><div><h5 onClick={() => setCurrentId(todo._id)}>{todo.title}</h5>
+                  <p>{todo.content}<a href="#!"  className="secondary-content"><i className="material-icons" onClick={() => removeTodo(todo._id)}>delete</i></a></p></div></li>
 
             ))}
 

@@ -84,7 +84,7 @@ function App() {
           </div>
         </form>
         {
-          !todos ? <Preloader /> : todos.length > 0 ? <ul className="collection">
+          !todos ? <Preloader /> : todos.length > 0 ? <ul className="collection"> 
             {todos.map(todo => (
               <li key={todo._id}
                 onClick={() => setCurrentId(todo._id)}
